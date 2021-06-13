@@ -1,5 +1,7 @@
 <?php 
  
+session_start();
+
 $dbhost 	= "localhost"; 
 $dbuser 	= "root"; 
 $dbpass 	= "root"; 
@@ -11,4 +13,4 @@ if($con->connect_error) {
     die("Greška u konekciji : " . $con->connect_error);
 } 
  
-/* end of file */
+?>
