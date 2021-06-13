@@ -26,10 +26,21 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-            <li><a href="korisnici.php">Popis korisnika</a></li>
-          <li><a href=".php">Popis lokacija</a></li>
-          <li><a href=".php">Evidencija stanja</a></li> 
+      
+            <?php if($_SESSION['userlevel'] == '0'){ ?>
+						       <li><a href="korisnici.php">Popis korisnika</a></li>
+            <li><a href="lokacije.php">Popis lokacija</a></li>
+          <li><a href="evidencija.php">Evidencija stanja</a></li> 
+          <li> <a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+							<?php } ?>
           
+          <?php if ($_SESSION['userlevel'] == '2' ) { ?>
+	  <li><a href="lokacije.php">Popis lokacija</a></li>
+          <li><a href="evidencija.php">Evidencija stanja</a></li> 
+          <li> <a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+							<?php } ?>
+            
+            
         </ul>
         
       </div><!--/.nav-collapse -->
